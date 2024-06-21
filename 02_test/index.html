@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- lang은 문서의 언어를 명시하는 속성으로 기본값 en을 ko로 바꿔주면 버역 알림이 안됨 -->
+<html lang="ko">
+  <!-- 문서의 정보는 <head> 태그 안에 작성 -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 외부 스타일 시트 -->
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- 외부 스크립트 -->
+  <script src="./js/main.js"></script>
+  <!-- 내부 스타일 시트 -->
+   <style>
+    div{
+      text-decoration: underline;
+    }
+   </style>
+  <!-- 문서의 제목을 정의(브라우저 탭에서 확인) -->
+  <title>02_test</title>
+  <!-- 내부 스크립트 -->
+   <script>
+    console.log("내부 스크립트")
+   </script>
+</head>
+<body>
+  <!-- 사용자 눈에 보이는 구조는 <body> 태그 안에 작성 -->
+    <div>Hello World!</div>
+
+  <!-- 화면에 이미지 출력하기 -->
+   
+   <img src="./images/logo.png" alt="로고"> 
+   <img src="images/logo.png" alt="로고"> 
+   <img src="/02_test/images/logo.png" alt="로고">
+   <img src="https://www.allrecipes.com/thmb/K9Ea4w7sUDgfgMfRLbLopR7oxok=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/50050-five-minute-ice-cream-DDMFS-4x3-076-fbf49ca6248e4dceb3f43a4f02823dd9.jpg" alt="아이스크림">
+
+   <!-- CSS로 배경이미지 넣기 -->
+  <div class="logo"></div>
+    <!-- 페이지를 나누고 연결 하기(링크 걸기) -->
+    <!-- href : 다른 페이지로 이동할 수 있는 참조가 되는 경로를 입력하는 속성  -->
+    <a href="https://www.naver.com">네이버</a>
+    <a href="./about/about.html">About</a>
+</body>
+</html>

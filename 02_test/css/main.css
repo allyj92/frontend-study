@@ -1,0 +1,10 @@
+div{
+  color :aquamarine;
+  font-size: 100px;
+}
+
+.logo{
+width: 1000px;
+height: 1000px;
+background-image: url("../images/logo.png");
+}
