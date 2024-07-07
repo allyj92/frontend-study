@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ecosystem</title>
+    <style>
+      .animal {
+        color: red;
+      }
+
+      /* 강제 상속: 자동으로 상속되지 않는 CSS 속성을 강제로 상속하는 방법 */
+      /* inherit: 부모의 값을 물려받음 */
+      .parent {
+        width: 300px;
+        height: 400px;
+        background-color: aquamarine;
+      }
+
+      .child {
+        width: 100px;
+        height: 300px;
+        background-color: orange;
+
+        /* 뷰포트 기준으로 배치 */
+        position: fixed;
+        top: 50px;
+        right: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ecosystem">
+      생태계
+      <div class="animal">
+        동물
+        <div class="tiger">호랑이</div>
+        <div class="lion">사자</div>
+        <div class="elephant">코끼리</div>
+      </div>
+      <div class="plant">식물</div>
+    </div>
+
+    <br /><br />
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
