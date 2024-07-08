@@ -9,11 +9,17 @@
   <link rel="stylesheet" href="CSS/main.css">
   <title>Document</title>
 
+
+
+  <!-- 링크 방식 -->
+   <link rel="stylesheet" href="box">
+
   <!-- 2. 내부 스타일 시트(내장 방식) -->
   <!-- 
     장 : 별도의 css 파일을 만들지 않고 바로 적용 가능
     단 : css 내용이 많이질 경우 HTML 내부 코드가 복잡해지고,
     여러 HTML 문서에서같은 스타일이 반복될 경우 문서마다 반복 작성
+    수정할 때도 문서마다 찾아다니면서 모두 수정해야 하므로 비효율적(유지보수에 안좋음)
   -->
   <style>
     div{
@@ -25,6 +31,11 @@
   
 </head>
 <body>
-  <div>GONI</div>
+  <!-- 3. 인라인 스타일(인라인 방식) -->
+  <!-- 
+    장 : 선택자 없이 해당 요소에 직접 스타일을 작성하므로 편리함
+    단 : 우선 순위가 제일 높아 스타일을 덮어쓸 수 없음(남발하면 유지보수에 안좋음)
+  -->
+  <div class ="box"; style = "color : green;">GONI</div>
 </body>
 </html>
