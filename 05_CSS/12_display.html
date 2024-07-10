@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Sunflower:wght@300&display=swap');
+  /* display : 요소의 화면 출력(보여짐) 특성
+  각 요소에 이미 저장되어 있고 수정 가능 
+  
+  예 : block, inline, inline-block 등
+  */
+  *{
+    font-family: "Sunflower", sans-serif;
+  }
+
+  span{
+    width : 50px;
+    height: 30px;
+    font-size: 10px;
+    background-color: rgb(31, 31, 54);
+    color : white;
+
+    /* 가로/세로 길이 지정을 위해 보여짐 특성을 바꿔보기 */
+    display: block;
+    /* 많은 경우에 인라인 요소를 블록 또는 인라인-블록으로 바꾸는 행위를
+    하기 될 것임(예: a태그, img태그) */
+
+    /* 요소의 숨김 처리 */
+    display : none;
+    /* 화면에서 요소를 일시적으로 혹은 영구적으로 사라지게 하는 목적으로
+    자주 사용됨(예: 모달창, 메뉴, 탭 메뉴 항목) */
+
+  }
+
+  #modal{
+    width: 300px;
+    height: 200px;
+    border: 1px solid  rgb(230, 229, 229);
+    background-color: rgb(230, 229, 229);
+    color: rgb(143, 143, 143);
+    font-size: 20px;
+    border-radius:  6px;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .parent{
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+    background-color: rgb(146, 146, 170);
+  }
+
+  .child{
+    width : 200px;
+    height: 100px;
+    background-color: rgb(184, 172, 189);
+
+    /* 투명도는 0과 1사이의 소수를 사용하여 투명도를 지정 */
+    /* 소수점 앞의 정수 부분은 생략 가능 */
+    opacity: .27;
+
+  }
+  .btn-outline-secondary{
+    color: #acacac;
+  }
+
+  
+
+
+</style>
+<body>
+  <span>Hello World</span>
+
+  <hr>
+
+  <!-- Tip! 모달창을 숨기거나 보일 때 -->
+   <div id ="modal">모달창</div>
+   <button type="button" class="btn btn-outline-secondary" onclick="showModal()">열기</button>
+   <button type="button" class="btn btn-outline-secondary" onclick="hideModal()">닫기</button>
+
+   <div class="parent">
+    <div class = "child"></div>
+   </div>
+
+<script>
+  
+  // 함수(=기능)
+  function showModal(){
+          document.querySelector("#modal").style.display = "block";
+          
+  }
+
+  function hideModal(){
+          document.querySelector("#modal").style.display = "none";
+          
+  }
+  
+  
+</script>  
+</body>
+</html>
+
+<!-- (정리) Quiz
+  Q1: HTML <a></a>에 가로 너비를 지정하기 위해 사용해야 하는 속성과 값은?
+  A1: display:block;
+
+  Q2: opacity 속성의 기본값은?
+  A2: 1
+-->
