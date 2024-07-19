@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      position: absolute; /* 절대 위치 지정 */
+      left: 50px; /* 왼쪽에서 50px 위치 */
+      top: 50px; /* 위에서 50px 위치 */
+      background-color: rgba(255, 0, 0, 0.5); /* 빨간색 반투명 배경 */
+    }
+
+    .box1 {
+      z-index: 1; /* z-index 값은 1 */
+    }
+
+    .box2 {
+      z-index: 2; /* z-index 값은 2 */
+      background-color: rgba(0, 0, 255, 0.5); /* 파란색 반투명 배경 */
+      left: 100px; /* 왼쪽에서 100px 위치 (오른쪽으로 이동) */
+      top: 100px; /* 위에서 100px 위치 (아래로 이동) */
+    }
+  </style>
+</head>
+<body>
+  <div class="box box1">1번</div> <!-- box1 클래스의 빨간색 박스 -->
+  <div class="box box2">2번</div> <!-- box2 클래스의 파란색 박스 -->
+</body>
+</html>

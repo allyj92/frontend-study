@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        width: 600px;
+        height: 350px;
+        background-color: #cdb4db;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .child-1 {
+        border-radius: 10px;
+        width: 250px;
+        height: 150px;
+        background-color: #ffc8dd;
+        position: relative;
+        z-index: 999;
+    }
+
+    .child-2 {
+        border-radius: 10px;
+        width: 350px;
+        height: 250px;
+        background-color: #ffafcc;
+        position: absolute;
+        top: 80px;
+        left: 100px;
+        z-index: 1;
+    }
+
+    .child-3 {
+        border-radius: 10px;
+        width: 250px;
+        height: 300px;
+        background-color: #bde0fe;
+        position: absolute;
+        bottom: 0;
+        right: 130px;
+        z-index: 2;
+    }
+
+    span{
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: #a2d2ff;
+        font-size: 40px;
+
+        position : absolute;
+        display: block;
+    }
+</style>
+<script>
+    function print(el, event) {
+        event.stopPropagation(); // Prevents event from bubbling to parent
+        console.log(el);
+    }
+</script>
+<body>
+    <div class="parent" onclick="print('parent', event)">parent
+        <div class="child-1" onclick="print('child-1', event)">child-1</div>
+        <div class="child-2" onclick="print('child-2', event)">child-2</div>
+        <div class="child-3" onclick="print('child-3', event)">child-3</div>
+    </div>
+
+    <!-- (참고) position 속성의 값으로 absolute, fixed가 지정된
+    요소는 display가 block으로 지정됨 -->
+    <span>123</span>
+</body>
+</html>
+
+<!-- (정리) Quiz
+  Q1: position 속성의 기본값은?
+  A1: static
+
+  Q2: 위치상 부모 요소를 기준으로 배치하는 position 속성의 값은?
+  A2: relative
+
+  Q3: 뷰포트를 기준으로 배치하는 position 속성의 값은?
+  A3: fixed
+
+  Q4: display 속성이 block의 값으로 바뀌지 않는 position 속성의 값은?
+    1) absolute  2) relative  3) fixed
+  A4: 3
+-->
