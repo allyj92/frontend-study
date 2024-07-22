@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 공통 스타일은 앞부분에 작성 */
+   /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+    .navbar li{
+      
+      background-color: rgb(224, 224, 224);
+      margin:0.5em 0.5em;
+      text-align: center;
+      display: inline-block;
+      border: 1px solid rgb(224, 224, 224);
+      border-radius: 5px;
+      height: 2em;
+      width: 3em;
+      padding: 0.5em 1em;
+
+      
+     
+    }
+
+    body{
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
+    .container{
+      display: flex;
+     
+      
+    }
+
+    .content-header{
+      display: flex;
+    }
+
+    .content-header > img{
+      width:20%;
+    }
+
+    .blog-img > img{
+  width:200px;
+    }
+
+    .blog-content{
+      flex:8;
+    }
+    .blog-img{
+      flex:2;
+      
+    }
+
+    .blog-profile{
+      border-radius: 50%;
+      
+    }
+
+
+    
+  </style>
+</head>
+<body>
+  <!-- Tip! 레이아웃을 만드는 기본
+    뭘 만들든 레이아웃은 항상 수평(행)으로 자른 후 박스부터 만들고 시작하면 됨
+    그리고 이 박스들을 전부 <div>로 구현해 놓으면 됨(물론 시맨틱 태그도 활용)
+    그리고 안에 글 넣고 그림 넣고 하면 끝!
+
+    이때 <div>는 블록 요소이기 때문에 위아래로 배치
+    좌우로 나란히 배치하고 싶으면 float(😡), inline-block(😐), Flexbox(😃)
+  -->
+
+  <!-- navbar -->
+  <nav>
+    <ul class="navbar">
+      <li><a href="#">영화</a></li>
+      <li><a href="#">맛집</a></li>
+      <li><a href="#">IT</a></li>
+      <li><a href="#">컴퓨터</a></li>
+    </ul>
+  </nav>
+
+  <!-- blog list item -->
+  <div class="container">
+    <div class="blog-content">
+      <div class="content-header">
+        <!-- 프로필 이미지 -->
+        <img src="https://avatars.githubusercontent.com/u/40111690?v=4" alt="profile" class="blog-profile">
+        <!-- 작성자, 시간 -->
+        <div class="blog-name">
+          <h4>킴고니</h4>
+          <p>1시간 전</p>
+        </div>
+      </div>
+      <div class="content-body">
+        <!-- 글 제목, 글 내용 -->
+        <h4>가성비 맛집을 발견했어요!</h4>
+        <p>
+          소고기 맛있어. 초밥 맛있어. 치킨 맛있어. 돼지고기 맛있어. 쌀국수 맛있어. 돈까스 맛있어. 숯불닭갈비 맛있어. 
+          한우한우한돈한돈. 피자 맛있어. 맛있는 맥주 맛있어. 회 맛있어. 한식은 다 맛있어.
+        </p>
+      </div>
+    </div>
+    <div class="blog-img">
+      <!-- 샘플 이미지 -->
+      <img src="https://placeholder.com/300x400" alt="sample">
+    </div>
+  </div>
+</body>
+</html>
