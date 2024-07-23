@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform</title>
+</head>
+<style>
+body{
+  padding:0 40px;
+}
+
+h1{
+  margin-bottom: 70px;
+  border-bottom: 1px solid#f3f3f3;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+div{
+  border-radius: 4px;
+  opacity:0.7;
+  padding:10px 10px;
+  color:white;
+  width: 100px;
+  height: 100px;
+  background-color: #ffc8dd;
+}
+
+.container-1 .item-1{
+  opacity:0.7;
+  padding:10px 10px;
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color:#cdb4db;
+  transform: rotate(45deg);/* deg(Degree) : 각도 */
+  transform: rotate(45deg) scale(1.1);
+}
+
+.translate{
+  transform : translateX(100px);
+}
+
+.scale{
+  transition:2s;
+}
+
+.scale:hover{
+  transform : scale(1.2);
+}
+
+.rotate{
+  transform : perspective(300px) rotateY(45deg);
+}
+
+.skew{
+  transform: skewY(20deg);
+}
+
+.container-2{
+  width: 200px;
+  height: 100px;
+  background-color:  #ffc8dd;
+}
+
+.container-2 .item-2{
+  width: 100px;
+  height: 100px;
+  background-color: #cdb4db;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 2s;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+}
+
+.hidden {
+  backface-visibility: hidden;
+}
+
+.container-2 .item-2:hover{
+  transform: rotateY(180deg);
+}
+</style>
+<body>
+  <h1>transform(변환)</h1>
+  <div class="container-1">
+    <div class="item-1">Hello World!</div>
+  </div>
+
+  <h2>translate: </h2>
+  <div class="translate">Hello World!</div>
+
+  <h2>scale: </h2>
+  <div class="scale">Hello World!</div>
+
+  <h2>rotate: </h2>
+  <div class="rotate">Hello World!</div>
+
+  <h2>skew: </h2>
+  <div class="skew">Hello World!</div>
+
+  <h1>perspective & backface-visibility</h1>
+  <div class = "container-2">
+    <div class="item-2">앞면</div>
+  </div>
+</body>
+</html>
+
+
+<!-- (정리) Quiz
+  Q1: transform 속성의 2D 회전을 지정하는 변환 함수는?
+  A1: transform:rotate(ndeg);
+
+  Q2: 관찰 대상의 부모 요소에 원근법을 지정하는 속성은?
+  A2: perspective
+
+  Q3: skewX 변환 함수에서 값으로 사용하는 단위는?
+  A3: deg
+
+  Q4: perspective 함수에서 원근 거리가 적용되는 대상은?
+  A4: 관찰 대상 자체
+
+  Q5: 요소의 뒷면을 숨기는 속성과 값은?
+  A5: backface-visibility
+-->

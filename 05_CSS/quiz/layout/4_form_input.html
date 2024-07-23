@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<style>
+  .text-input{
+    width: 120px;
+    padding:10px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.7s;
+  }
+
+  .text-input:focus{
+    border: 2px solid rgb(250, 225, 225);
+    cursor: pointer;
+    
+  }
+</style>
+<body>
+  <h2>연습</h2>
+  <form>
+    <input type="text">
+    <input type="text" class = "text-input">
+    <button type="submit">전송</button>
+
+    <br>
+
+    <!-- input태그 쓸 때 라벨 태그도 함께 사용 -->
+     <p>
+      <label for="name">Your Name</label>
+     </p>
+     <input type="text" class="text-input" id="name">
+  </form>
+  <h2>실전</h2>
+</body>
+</html>

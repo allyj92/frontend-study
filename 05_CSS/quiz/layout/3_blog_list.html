@@ -55,62 +55,95 @@ table {
 	border-spacing: 0;
 }
 
+.navbar{
+  display: flex;
+  column-gap: 10px;
+}
 
-    .navbar li{
+
+.navbar li{
       
-      background-color: rgb(224, 224, 224);
-      margin:0.5em 0.5em;
-      text-align: center;
-      display: inline-block;
-      border: 1px solid rgb(224, 224, 224);
-      border-radius: 5px;
-      height: 2em;
-      width: 3em;
-      padding: 0.5em 1em;
+    background-color: rgb(224, 224, 224);
+    text-align : center;
+    padding : 10px;
+    border : 1px solid rgb(224, 224, 224);
+    border-radius : 5px;
+    width : 4em;
+  
 
       
      
-    }
+}
 
-    body{
-      width: 80%;
-      margin: 0 auto;
-    }
+.navbar li a {
+  font-size: 18px;
+}
 
-    a{
-      text-decoration: none;
-      color: black;
-    }
-
-    .container{
-      display: flex;
+body{
+    width: 80%;
+    margin: 0 auto
      
-      
-    }
+ }
 
-    .content-header{
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+  display: flex;
+  width:80%;
+  margin: 0 auto;
+ 
+ 
+     
+}
+
+.content-header{
       display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
     }
 
-    .content-header > img{
+.content-header > img{
       width:20%;
     }
 
-    .blog-img > img{
-  width:200px;
+.blog-img > img{
+  width:130px;
     }
 
-    .blog-content{
-      flex:8;
-    }
-    .blog-img{
-      flex:2;
-      
+.blog-content{
+    flex:8;
+    width: 80%;
+    height: 200px;
+ }
+.blog-img{
+    flex:2;
+    width: 20%;
+    height: 200px;
+ }
+
+ .blog-img > img{
+    width: 100%;
+    height: 100%;
+ }
+
+
+.blog-profile{
+
+    border-radius: 50%;
+    width: 30px;
+    height: 50px;
+  }
+
+.blog-name{
+      margin: 1rem 0.7rem;
     }
 
-    .blog-profile{
-      border-radius: 50%;
-      
+.content-body > h4{
+      margin-bottom: 1rem;
     }
 
 
@@ -128,6 +161,7 @@ table {
   -->
 
   <!-- navbar -->
+
   <nav>
     <ul class="navbar">
       <li><a href="#">영화</a></li>
@@ -163,5 +197,6 @@ table {
       <img src="https://placeholder.com/300x400" alt="sample">
     </div>
   </div>
+
 </body>
 </html>
