@@ -1,139 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
 
-</head>
+  <style>
+    .text-input {
+      width: 120px;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.7s;
+    }
 
-<style>
-  .text-input{
-    width: 120px;
-    padding:10px;
-    font-size: 20px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: 0.7s;
-  }
+    .text-input:focus {
+      border: 2px solid rgb(250, 225, 225);
+    }
 
-  .text-input:focus{
-    border: 2px solid rgb(250, 225, 225);
-    
-    
-  }
+    /* 공통 스타일을 앞부분에 작성 */
+    /* 콤마를 써서 여러 개 동시 선택 가능 */
+    div,
+    input,
+    textarea {
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: none;
+    }
 
-/* 공통 스타일을 앞부분에 작성 */
-/* 콤마를 써서 여러 개 동시 선택 가능 */
-div, input, textarea{
-  box-sizing: border-box;
-}
-textarea{
-  resize: none;
-}
+    button {
+      cursor: pointer;
+    }
 
-button{
-  cursor: pointer;
-}
+    .form-background {
+      background-color: rgb(66, 66, 66);
+      padding: 30px 0;
+    }
 
-.form-background{
-  background-color: rgb(66, 66, 66);
-  padding : 30px 0;
-}
+    .form-container {
+      /* 가로 길이는 80%를 차지하다가 600px에서 더 이상 안 늘어나도록 제한*/
+      width: 80%;
+      height: 600px;
+      margin: 0 auto;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 7px;
+    }
 
-.form-container{
-  /* 가로 길이는 80%를 차지하다가 600px에서 더 이상 안 늘어나도록 제한*/
-  width: 80%;
-  height: 600px;
-  margin: 0 auto;
-  max-width: 600px;
-  background-color: white;
-  border-radius: 7px;
-}
+    .form-container form h3 {
+      padding: 30px 30px;
+    }
 
-.form-container form h3{
-  padding: 30px 30px;
-}
+    .form-email {
+      padding-left: 30px;
+    }
 
+    .title-email {
+      color: rgb(94, 94, 94);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-family: "Roboto", sans-serif;
+    }
 
-.form-email{
- padding-left: 30px;
-}
+    .input-email {
+      width: 100%;
+    }
 
+    #email {
+      width: 92%;
+      height: 50px;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 5px;
+    }
 
+    .name-container {
+      display: flex;
+      width: 94.5%;
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
 
-.title-email{
-  color: rgb(94, 94, 94);
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
+    .first-name-container,
+    .last-name-container {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+    }
 
+    .f-name-title,
+    .l-name-title {
+      color: rgb(94, 94, 94);
+      font-size: 1rem;
+      font-family: "Roboto", sans-serif;
+    }
 
-.input-email{
-  width: 100%;
-}
+    #first-name,
+    #last-name {
+      margin-right: 18px;
+      height: 50px;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 5px;
+      margin-top: 10px;
+    }
 
-#email{
-  width: 92%;
-  height: 50px;
-  border: 1px solid rgb(226, 226, 226);
-  border-radius: 5px;
-}
+    .memo-container {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    }
 
+    .memo-title {
+      margin-top: 30px;
+      color: rgb(94, 94, 94);
+      font-family: "Roboto", sans-serif;
+    }
+    #memo {
+      width: 97.5%;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 5px;
+      margin-top: 10px;
+      height: 150px;
+    }
 
+    .button-container {
+      display: flex;
+      justify-content: space-between;
 
+      width: 86%;
+      margin: 0 auto;
+      margin-top: 25px;
+    }
 
-</style>
-<body>
-  <h2>연습</h2>
-  <form>
-    <input type="text">
-    <input type="text" class = "text-input">
-    <button type="submit">전송</button>
+    .button-fix {
+      margin-left: -12px;
+      padding: 10px 30px;
+      border-radius: 20px;
+      background-color: #ebebeb;
+      border: 1px solid #ebebeb;
+      color: #ff6700;
+      font-weight: 600;
+      font-family: "Poor Story", system-ui;
+      box-shadow: 5px 5px 20px rgb(177, 177, 177);
+    }
 
-    <br>
+    .button-save {
+      padding: 10px 30px;
+      border-radius: 20px;
+      background-color: #f85e00;
+      border: 1px solid #f85e00;
+      color: rgb(204, 204, 204);
+      font-family: "Poor Story", system-ui;
+      box-shadow: 5px 5px 20px rgb(155, 155, 155);
+    }
 
-    <!-- input태그 쓸 때 라벨 태그도 함께 사용 -->
-     <p>
-      <label for="name">Your Name</label>
-     </p>
-     <input type="text" class="text-input" id="name">
-  </form>
- <h2>실전</h2>
- <!-- 박스부터 그려보기! (불필요한 div는 생략 가능) -->
-  <div class="form-background">
-    <div class="form-container">
+    .button-fix:hover {
+      color: #ff915f;
+      transition: color 1s;
+    }
+
+    .button-save:hover {
+      background-color: #fc6500;
+      transition: color 1.5s;
+    }
+  </style>
+  <body>
+    <h2>연습</h2>
+    <form>
+      <input type="text" />
+      <input type="text" class="text-input" />
+      <button type="submit">전송</button>
+
+      <br />
+
+      <!-- input태그 쓸 때 라벨 태그도 함께 사용 -->
+      <p>
+        <label for="name">Your Name</label>
+      </p>
+      <input type="text" class="text-input" id="name" />
+    </form>
+    <h2>실전</h2>
+    <!-- 박스부터 그려보기! (불필요한 div는 생략 가능) -->
+    <div class="form-background">
+      <div class="form-container">
         <form>
           <h3>Contact Us</h3>
 
-          
-          <div class = "form-email">
+          <div class="form-email">
+            <div class="title-email">
+              <label for="email" class="title-email">Your Email</label>
+            </div>
 
-            <div class = "title-email">
-            <label for="email" class="title-email">Your Email</label>
-          </div>
-
-          <div class="input-email">
-            <input type="text" id = "email">  
-          </div>
-
+            <div class="input-email">
+              <input type="text" id="email" />
+            </div>
           </div>
 
           <div class="name-container">
-            <div class = "first-name-container">
-              <label for="first-name">first Name</label>
+            <div class="first-name-container">
+              <label for="first-name" class="f-name-title">first Name</label>
+              <input type="text" id="first-name" />
             </div>
             <div class="last-name-container">
-
+              <label for="last-name" class="l-name-title">last-name</label>
+              <input type="text" id="last-name" />
             </div>
-
           </div>
 
-          
-
+          <div class="memo-container">
+            <label for="memo" class="memo-title">Memo</label>
+            <input type="text" id="memo" />
+          </div>
+          <div class="button-container">
+            <button class="button-fix">수 정</button>
+            <button class="button-save">저 장</button>
+          </div>
         </form>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
