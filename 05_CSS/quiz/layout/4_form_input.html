@@ -20,9 +20,70 @@
 
   .text-input:focus{
     border: 2px solid rgb(250, 225, 225);
-    cursor: pointer;
+    
     
   }
+
+/* 공통 스타일을 앞부분에 작성 */
+/* 콤마를 써서 여러 개 동시 선택 가능 */
+div, input, textarea{
+  box-sizing: border-box;
+}
+textarea{
+  resize: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+.form-background{
+  background-color: rgb(66, 66, 66);
+  padding : 30px 0;
+}
+
+.form-container{
+  /* 가로 길이는 80%를 차지하다가 600px에서 더 이상 안 늘어나도록 제한*/
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+.form-container form h3{
+  padding: 30px 30px;
+}
+
+
+.form-email{
+ padding-left: 30px;
+}
+
+
+
+.title-email{
+  color: rgb(94, 94, 94);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+
+.input-email{
+  width: 100%;
+}
+
+#email{
+  width: 92%;
+  height: 50px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 5px;
+}
+
+
+
+
 </style>
 <body>
   <h2>연습</h2>
@@ -39,6 +100,40 @@
      </p>
      <input type="text" class="text-input" id="name">
   </form>
-  <h2>실전</h2>
+ <h2>실전</h2>
+ <!-- 박스부터 그려보기! (불필요한 div는 생략 가능) -->
+  <div class="form-background">
+    <div class="form-container">
+        <form>
+          <h3>Contact Us</h3>
+
+          
+          <div class = "form-email">
+
+            <div class = "title-email">
+            <label for="email" class="title-email">Your Email</label>
+          </div>
+
+          <div class="input-email">
+            <input type="text" id = "email">  
+          </div>
+
+          </div>
+
+          <div class="name-container">
+            <div class = "first-name-container">
+              <label for="first-name">first Name</label>
+            </div>
+            <div class="last-name-container">
+
+            </div>
+
+          </div>
+
+          
+
+        </form>
+    </div>
+  </div>
 </body>
 </html>
