@@ -87,11 +87,14 @@ img {
 header {
   background-color: #fff;
   border-bottom: 1px solid #c8c8c8;
+  opacity: 0.7;
   /* 고정된 헤더 만들기 */
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 9;
+  background: #333;
+  color: white;
 }
 header > .inner {
   height: 60px;
@@ -135,28 +138,94 @@ header nav ul li a:hover {
   object-fit: cover;
 }
 
-/* ABOUT */
+/* ABOUT 섹션 */
+/* 컨테이너 스타일 */
+.container {
+  position: relative;
+}
+
+/* 화살표 컨테이너 스타일 */
+.arrow-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px;
+}
+
+.arrow-wrapper h1 {
+  color: white;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  min-width: 600px;
+  font-weight: 700;
+}
+
+/* 화살표 스타일 */
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #fff;
+  margin: 5px 0;
+  animation: bounce 1s infinite, sparkle 1s infinite;
+}
+
+/* 반짝이는 효과 */
+@keyframes sparkle {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* 튕기는 효과 */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .about {
-  /* (주의) 100%는 부모의 가로 길이(<body>)가 기준이 됨 */
-  /* margin-top: 100%; */
+  /* 기존 스타일 유지 */
   margin-top: 100vh;
   padding-top: 200px;
+  background-color: #333; /* 어두운 배경색 */
+  color: #fff; /* 밝은 텍스트 색상 */
 }
+
 .about .inner {
   padding-bottom: 30px;
   position: relative;
 }
+
 .about .about__wrapper {
   display: flex;
   justify-content: space-between;
 }
+
 .about .about__wrapper .about__img {
   width: 40%;
 }
+
 .about .about__wrapper .about__img img {
   width: 100%;
   border-radius: 50%;
 }
+
 .about .about__wrapper .about__text {
   width: 45%;
   padding: 30px;
@@ -164,34 +233,48 @@ header nav ul li a:hover {
   flex-direction: column;
   justify-content: space-around;
 }
+
 .about .about__wrapper .about__text .slogan {
   font-weight: bold;
   font-size: 35px;
+  color: #ffd700; /* 밝은 색상, 예: 금색 */
 }
+
 .about .about__wrapper .about__text h3 {
   font-size: 20px;
   font-weight: 600;
+  color: #fff; /* 텍스트 색상 */
 }
+
 .about .about__wrapper .about__text h4 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #ddd; /* 밝은 텍스트 색상 */
 }
+
 .about .about__wrapper .about__text li {
   line-height: 1.8;
+  color: #ccc; /* 밝은 텍스트 색상 */
 }
+
 .about .about__btn {
   position: absolute;
   bottom: 0;
   right: 30px;
 }
+
+.about .about__btn a {
+  color: #fff; /* 버튼 텍스트 색상 */
+  background-color: #555; /* 버튼 배경 색상 */
+}
+
 .about .about__btn img {
   display: inline;
   width: 28px;
   margin-right: 10px;
   vertical-align: middle;
 }
-
 /* Slogan Container */
 .slogan-container {
   background-color: #f4f4f4;
