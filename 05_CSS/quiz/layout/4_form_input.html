@@ -15,6 +15,7 @@
   </head>
 
   <style>
+<<<<<<< HEAD
 
     .text-input {
       width: 120px;
@@ -30,6 +31,22 @@
       border: 2px solid rgb(250, 225, 225);
     }
 
+=======
+    .text-input {
+      width: 120px;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.7s;
+    }
+
+    .text-input:focus {
+      border: 2px solid rgb(250, 225, 225);
+    }
+
+>>>>>>> a9ac7620e9d95e0568210104d2f122f6d6e72d1f
     /* 공통 스타일을 앞부분에 작성 */
     /* 콤마를 써서 여러 개 동시 선택 가능 */
     div,
@@ -40,6 +57,7 @@
     textarea {
       resize: none;
     }
+<<<<<<< HEAD
 
     button {
       cursor: pointer;
@@ -221,8 +239,44 @@
    font-size: 1.5em;
    padding-left: 10px;
 }
+=======
 
+    button {
+      cursor: pointer;
+    }
 
+    .form-background {
+      background-color: rgb(66, 66, 66);
+      padding: 30px 0;
+    }
+
+    .form-container {
+      /* 가로 길이는 80%를 차지하다가 600px에서 더 이상 안 늘어나도록 제한*/
+      width: 80%;
+      height: 600px;
+      margin: 0 auto;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 7px;
+    }
+
+    .form-container form h3 {
+      padding: 30px 30px;
+    }
+
+    .form-email {
+      padding-left: 30px;
+    }
+>>>>>>> a9ac7620e9d95e0568210104d2f122f6d6e72d1f
+
+    .title-email {
+      color: rgb(94, 94, 94);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-family: "Roboto", sans-serif;
+    }
+
+<<<<<<< HEAD
   </style>
   <body>
     <h2>연습</h2>
@@ -233,6 +287,120 @@
 
       <br />
 
+=======
+    .input-email {
+      width: 100%;
+    }
+
+    #email {
+      width: 92%;
+      height: 50px;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 5px;
+    }
+
+    .name-container {
+      display: flex;
+      width: 94.5%;
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+
+    .first-name-container,
+    .last-name-container {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+    }
+
+    .f-name-title,
+    .l-name-title {
+      color: rgb(94, 94, 94);
+      font-size: 1rem;
+      font-family: "Roboto", sans-serif;
+    }
+
+    #first-name,
+    #last-name {
+      margin-right: 18px;
+      height: 50px;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .memo-container {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .memo-title {
+      margin-top: 30px;
+      color: rgb(94, 94, 94);
+      font-family: "Roboto", sans-serif;
+    }
+    #memo {
+      width: 97.5%;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 5px;
+      margin-top: 10px;
+      height: 150px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+
+      width: 86%;
+      margin: 0 auto;
+      margin-top: 25px;
+    }
+
+    .button-fix {
+      margin-left: -12px;
+      padding: 10px 30px;
+      border-radius: 20px;
+      background-color: #ebebeb;
+      border: 1px solid #ebebeb;
+      color: #ff6700;
+      font-weight: 600;
+      font-family: "Poor Story", system-ui;
+      box-shadow: 5px 5px 20px rgb(177, 177, 177);
+    }
+
+    .button-save {
+      padding: 10px 30px;
+      border-radius: 20px;
+      background-color: #f85e00;
+      border: 1px solid #f85e00;
+      color: rgb(204, 204, 204);
+      font-family: "Poor Story", system-ui;
+      box-shadow: 5px 5px 20px rgb(155, 155, 155);
+    }
+
+    .button-fix:hover {
+      color: #ff915f;
+      transition: color 1s;
+    }
+
+    .button-save:hover {
+      background-color: #fc6500;
+      transition: color 1.5s;
+    }
+  </style>
+  <body>
+    <h2>연습</h2>
+    <form>
+      <input type="text" />
+      <input type="text" class="text-input" />
+      <button type="submit">전송</button>
+
+      <br />
+
+>>>>>>> a9ac7620e9d95e0568210104d2f122f6d6e72d1f
       <!-- input태그 쓸 때 라벨 태그도 함께 사용 -->
       <p>
         <label for="name">Your Name</label>
@@ -247,8 +415,18 @@
           <h3>Contact Us</h3>
 
           <div class="form-email">
+<<<<<<< HEAD
             <label for="email" class="title-email">Your Email</label>
             <input type="email" id="email" class="input-email" placeholder="email@example.com"/>
+=======
+            <div class="title-email">
+              <label for="email" class="title-email">Your Email</label>
+            </div>
+
+            <div class="input-email">
+              <input type="text" id="email" />
+            </div>
+>>>>>>> a9ac7620e9d95e0568210104d2f122f6d6e72d1f
           </div>
 
           <div class="name-container">
@@ -264,6 +442,7 @@
           </div>
 
           <div class="memo-container">
+<<<<<<< HEAD
             <label for="memo" class="memo-title">Message</label>
             <textarea type="text" id="memo"></textarea>
             
@@ -274,8 +453,21 @@
             <button id="inpHold" class="button-save">SEND</button>
           </div>
 
+=======
+            <label for="memo" class="memo-title">Memo</label>
+            <input type="text" id="memo" />
+          </div>
+          <div class="button-container">
+            <button class="button-fix">수 정</button>
+            <button class="button-save">저 장</button>
+          </div>
+>>>>>>> a9ac7620e9d95e0568210104d2f122f6d6e72d1f
         </form>
       </div>
     </div>
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> a9ac7620e9d95e0568210104d2f122f6d6e72d1f
