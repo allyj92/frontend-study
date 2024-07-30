@@ -7,6 +7,7 @@
 html {
   /* 스크롤 이동을 부드럽게 */
   scroll-behavior: smooth;
+
 }
 
 body {
@@ -85,8 +86,9 @@ img {
 
 /* HEADER */
 header {
-  background-color: #fff;
-  border-bottom: 1px solid #c8c8c8;
+  /* background-color: #fff; */
+  background-color: #000000;
+  border-bottom: 1px solid #000000;
   opacity: 0.7;
   /* 고정된 헤더 만들기 */
   width: 100%;
@@ -121,25 +123,33 @@ header nav ul li a:hover {
 
 /* VISUAL */
 .visual {
-  /* (중요)
-    헤더가 fixed 되어 일반 배치 흐름에서 벗어남
-    fixed 헤더 다음에 오는 섹션은 헤더의 높이만큼 외부 여백 추가 필요
-  */
-  margin-top: 60px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100vh - 60px); /* Adjusted height calculation */
+  overflow: hidden;
+  background-color: #333; /* Change background color to black */
 }
 .visual video {
   width: 100%;
-  height: 100%;
+  height: 60%;
   object-fit: cover;
 }
 
+.about {
+  padding-top: 100vh; 
+  padding-bottom: 200px; 
+  background-color: #333; 
+  color: #fff; 
+}
 /* ABOUT 섹션 */
 /* 컨테이너 스타일 */
+
+
+
+
+
 .container {
   position: relative;
 }
@@ -147,13 +157,13 @@ header nav ul li a:hover {
 /* 화살표 컨테이너 스타일 */
 .arrow-wrapper {
   position: absolute;
-  top: 50%;
-  left: 43%;
+  top: 50%; /* Adjust the percentage value to move it down */
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 70px;
+  margin-top: 900px; /* Increase margin for more downward movement */
 }
 
 .arrow-wrapper h1 {
@@ -161,9 +171,8 @@ header nav ul li a:hover {
   font-size: 3rem;
   padding-bottom: 1rem;
   min-width: 600px;
-  font-weight: 700;
+  font-weight: 800;
 }
-
 /* 화살표 스타일 */
 .arrow {
   width: 0;
@@ -199,10 +208,28 @@ header nav ul li a:hover {
   }
 }
 
+@keyframes moveText {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+.profile{
+  animation: moveText 3s ease-in-out infinite;
+}
+
 .about {
   /* 기존 스타일 유지 */
   margin-top: 100vh;
-  padding-top: 200px;
+  margin:0;
   background-color: #333; /* 어두운 배경색 */
   color: #fff; /* 밝은 텍스트 색상 */
 }
@@ -210,71 +237,132 @@ header nav ul li a:hover {
 .about .inner {
   padding-bottom: 30px;
   position: relative;
+  padding-top:0;
 }
 
 .about .about__wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* 수직 가운데 정렬 추가 */
+  max-width: 1200px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
 }
 
 .about .about__wrapper .about__img {
   width: 40%;
+  max-width: 400px; /* 최대 너비 설정 */
+  position: relative; /* 상대 위치 설정 */
 }
 
 .about .about__wrapper .about__img img {
   width: 100%;
   border-radius: 50%;
+  display: block; /* 이미지를 블록 수준 요소로 변경 */
+  border: none; /* 테두리 제거 */
 }
 
+/* phone image btn */
+.about__btn {
+  display: flex;
+  transition: 0.3s ease-out;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.about .about__btn img {
+  margin-top: 100px;
+  /* Add animation properties */
+  animation: shakePhone 0.4s infinite;
+  width: 40px; /* 이미지 크기 조정 */
+  margin-right: 10px;
+  vertical-align: middle;
+  border:none;
+  background-color : white;
+}
+
+/* Define the shake animation */
+@keyframes shakePhone {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+
 .about .about__wrapper .about__text {
-  width: 45%;
+  width: 55%; /* 텍스트 영역 너비 조정 */
   padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center; /* 수직 가운데 정렬 */
 }
 
 .about .about__wrapper .about__text .slogan {
   font-weight: bold;
   font-size: 35px;
   color: #ffd700; /* 밝은 색상, 예: 금색 */
+  margin-bottom: 20px; /* 간격 조정 */
 }
 
 .about .about__wrapper .about__text h3 {
-  font-size: 20px;
+  font-size: 24px; /* 크기 조정 */
   font-weight: 600;
   color: #fff; /* 텍스트 색상 */
+  margin-bottom: 10px; /* 간격 조정 */
 }
 
 .about .about__wrapper .about__text h4 {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 12px; /* 간격 조정 */
   color: #ddd; /* 밝은 텍스트 색상 */
 }
 
-.about .about__wrapper .about__text li {
+.about .about__wrapper .about__text p {
   line-height: 1.8;
   color: #ccc; /* 밝은 텍스트 색상 */
 }
 
 .about .about__btn {
-  position: absolute;
-  bottom: 0;
-  right: 30px;
+  margin-top: 20px; /* 버튼과 텍스트 간격 조정 */
+  position: relative;
+  
 }
 
-.about .about__btn a {
-  color: #fff; /* 버튼 텍스트 색상 */
-  background-color: #555; /* 버튼 배경 색상 */
-}
-
-.about .about__btn img {
-  display: inline;
-  width: 28px;
+.about__btn img {
+  margin-top: 100px; /* Adjust as needed */
+  /* Add animation properties */
+  animation: shakePhone 0.4s infinite;
+  width: 40px; /* 이미지 크기 조정 */
   margin-right: 10px;
   vertical-align: middle;
+  border: none;
+  background-color: white;
 }
+
+/* Adjust the margin to bring the text closer to the phone image */
+.about .about__btn a {
+  padding: 10px 15px; /* Adjust padding as needed */
+  color: #fff; /* 버튼 텍스트 색상 */
+  background-color: #333; /* 버튼 배경 색상 */
+  text-decoration: none; /* 링크 기본 스타일 제거 */
+  border-radius: 8%; /* 둥근 모서리 추가 */
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* Add margin to create space between elements */
+  position: absolute;
+  left:65rem;
+  top: -20rem;
+
+}
+
+
+
 /* Slogan Container */
 .slogan-container {
   background-color: #f4f4f4;
@@ -372,17 +460,17 @@ header nav ul li a:hover {
 
 .badge-container {
   margin: 0 auto;
+  max-width: 80%; /* Reduce the maximum width for smaller devices */
+  padding-top: 40px; /* Adjust spacing as needed */
+  overflow: hidden; /* Ensure badges don't overflow */
 }
 
 .badge-container ul {
-  padding-top: 80px;
-  width: 80%;
-  height: 100px;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px; /* Increase or decrease gap between badges */
 }
 
 .badge-container ul li {
@@ -394,9 +482,9 @@ header nav ul li a:hover {
   background-color: #ffffff;
   padding: 10px;
   box-sizing: border-box;
-  border-radius: 50%; /* Ensure li elements are always rounded */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effects */
-  animation: rotate 20s linear infinite; /* Apply rotation animation */
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: rotate 20s linear infinite;
 }
 
 /* Make sure to stagger the rotation timing for a nice visual effect */
@@ -447,6 +535,8 @@ header nav ul li a:hover {
   overflow-x: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #fdfdfd; /* Change background color to black */
+ 
 }
 
 .outer:hover {
@@ -458,7 +548,8 @@ header nav ul li a:hover {
   width: 80%;
   height: 90%;
   margin: 0 auto;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
+  /* margin-bottom: 70px; */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -473,13 +564,7 @@ header nav ul li a:hover {
   margin-bottom: 30px;
 }
 
-.inner-list {
-  display: flex;
-  transition: 0.3s ease-out;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+
 
 .inner-wrap {
   background-color: rgb(255, 255, 255);
@@ -550,13 +635,42 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+
+  .about .about__btn a {
+     
+    right:300rem;
+    top: 50rem;
+  
+  }
+
+
   .button-list {
     display: flex;
     justify-content: center;
     gap: 20px; /* 버튼 사이의 간격 조정 */
     margin: 0 auto;
   }
-}
+  #about .inner{
+    padding-bottom: 100px;
+  }
+
+
+  
+  .about__text ul li{
+    margin-bottom: 20px;
+  }
+  .outer{
+    height: 1000px;
+  }
+  .badge-container ul{
+    padding-top: 120px;
+    padding-bottom: 8px;
+  }
+  /* .arrow-wrapper {
+    margin-top: 800px; /* Increase margin for more downward movement */
+
+  } 
+
 
 .course-container {
   text-align: center;
@@ -584,6 +698,7 @@ header nav ul li a:hover {
 /* WORK */
 .work {
   padding-top: 200px;
+  padding-bottom: 200px;
 }
 .work .port {
   display: flex;
@@ -621,7 +736,9 @@ header nav ul li a:hover {
 
 /* CONTACT */
 .contact {
-  padding: 200px 0;
+  padding: 100px 0;
+  background-color: #333;
+  color: white;
 }
 .contact .contact__info li {
   line-height: 2;
@@ -667,7 +784,6 @@ header nav ul li a:hover {
   transition: 1s;
 }
 
-/* 후 */
 .contact.show .contact__sns ul li {
   opacity: 1;
   transform: translateY(0);
@@ -686,14 +802,34 @@ header nav ul li a:hover {
 }
 
 .contact .contact__sns ul img {
-  width: 30px;
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between icons */
+}
+
+/* Adjust the specific Instagram and Facebook icons */
+.contact .contact__sns ul li.instagram img {
+  /* Replace 'instagram.png' with your actual Instagram logo image */
+  content: url('instagram.png');
+}
+
+.contact .contact__sns ul li.facebook img {
+  /* Replace 'facebook.png' with your actual Facebook logo image */
+  content: url('facebook.png');
 }
 
 /* FOOTER */
+footer{
+  background-color: #333;
+  color: white;
+  
+}
+
 footer .copyright {
   text-align: center;
   font-weight: 600;
   line-height: 200px;
+
 }
 
 /* MODAL */
