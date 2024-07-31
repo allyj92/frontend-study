@@ -272,6 +272,10 @@ header nav ul li a:hover {
   margin: 0 auto; /* 가운데 정렬 */
 }
 
+.about h2 {
+  padding-top: 100px;
+}
+
 .about .about__wrapper .about__img {
   width: 40%;
   max-width: 400px; /* 최대 너비 설정 */
@@ -402,7 +406,7 @@ header nav ul li a:hover {
 
 /* SKILL */
 .skill {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 .skill .skill__list {
   display: flex;
@@ -537,6 +541,11 @@ header nav ul li a:hover {
 }
 
 /* course */
+
+.course-container h2 {
+  padding-top: 100px;
+}
+
 .outer {
   border: 2px solid rgb(230, 230, 230);
   border-radius: 8px;
@@ -675,9 +684,6 @@ header nav ul li a:hover {
     text-align: center;
   }
 
-  .about__text .about__contact {
-  }
-
   .about .about__contact img {
     margin-left: 109px;
   }
@@ -811,7 +817,7 @@ header nav ul li a:hover {
 
 .impact-words h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #afb15b;
   margin-bottom: 40px;
   font-weight: bold;
 }
