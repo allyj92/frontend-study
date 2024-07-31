@@ -7,7 +7,6 @@
 html {
   /* 스크롤 이동을 부드럽게 */
   scroll-behavior: smooth;
-
 }
 
 body {
@@ -41,6 +40,8 @@ a {
 img {
   /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
   display: block;
+  border: none;
+  list-style: none;
 }
 
 .title {
@@ -62,8 +63,8 @@ img {
 .btn {
   width: 120px;
   padding: 10px;
-  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 블록으로 지정 */
-  border: 2px solid #333;
+  /* display: block; a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 블록으로 지정 */
+  /* border: 2px solid #333; */
   border-radius: 4px;
   font-size: 16px;
   font-weight: 500;
@@ -73,7 +74,7 @@ img {
 }
 .btn:hover {
   background-color: #333;
-  color: #fff;
+  color: #5a5a5a;
 }
 .btn.btn--brown {
   color: #592b18;
@@ -117,7 +118,7 @@ header nav ul li {
   font-weight: 700;
 }
 header nav ul li a:hover {
-  color: orange;
+  color: #ffd700;
   /* text-shadow: 1px 1px 5px #333; */
 }
 
@@ -138,17 +139,12 @@ header nav ul li a:hover {
 }
 
 .about {
-  padding-top: 100vh; 
-  padding-bottom: 200px; 
-  background-color: #333; 
-  color: #fff; 
+  padding-top: 100vh;
+  background-color: #333;
+  color: #fff;
 }
 /* ABOUT 섹션 */
 /* 컨테이너 스타일 */
-
-
-
-
 
 .container {
   position: relative;
@@ -222,14 +218,14 @@ header nav ul li a:hover {
     opacity: 0;
   }
 }
-.profile{
+.profile {
   animation: moveText 3s ease-in-out infinite;
 }
 
 .about {
   /* 기존 스타일 유지 */
   margin-top: 100vh;
-  margin:0;
+  margin: 0;
   background-color: #333; /* 어두운 배경색 */
   color: #fff; /* 밝은 텍스트 색상 */
 }
@@ -237,7 +233,7 @@ header nav ul li a:hover {
 .about .inner {
   padding-bottom: 30px;
   position: relative;
-  padding-top:0;
+  padding-top: 0;
 }
 
 .about .about__wrapper {
@@ -252,6 +248,7 @@ header nav ul li a:hover {
   width: 40%;
   max-width: 400px; /* 최대 너비 설정 */
   position: relative; /* 상대 위치 설정 */
+  padding-bottom: 270px;
 }
 
 .about .about__wrapper .about__img img {
@@ -259,29 +256,31 @@ header nav ul li a:hover {
   border-radius: 50%;
   display: block; /* 이미지를 블록 수준 요소로 변경 */
   border: none; /* 테두리 제거 */
+  margin-top: 150px;
 }
 
-/* phone image btn */
-.about__btn {
-  display: flex;
-  transition: 0.3s ease-out;
-  /* height: 100%; */
+.about .about__contact {
+  width: 200px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.about .about__btn img {
-  margin-top: 100px;
-  /* Add animation properties */
+.about .about__contact img {
+  width: 50px;
   animation: shakePhone 0.4s infinite;
-  width: 40px; /* 이미지 크기 조정 */
-  margin-right: 10px;
-  vertical-align: middle;
-  border:none;
-  background-color : white;
+  border: none;
+  margin-top: 50px;
+  margin: 50px 74px 7px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /*이미지 경계 제거*/
+  cursor: pointer;
 }
 
-/* Define the shake animation */
+.about .about__contact div {
+  margin-left: 55px;
+}
+
+/* 휴대폰 진동 keyframe */
 @keyframes shakePhone {
   0% {
     transform: translateX(-5px);
@@ -293,7 +292,6 @@ header nav ul li a:hover {
     transform: translateX(-5px);
   }
 }
-
 
 .about .about__wrapper .about__text {
   width: 55%; /* 텍스트 영역 너비 조정 */
@@ -332,18 +330,6 @@ header nav ul li a:hover {
 .about .about__btn {
   margin-top: 20px; /* 버튼과 텍스트 간격 조정 */
   position: relative;
-  
-}
-
-.about__btn img {
-  margin-top: 100px; /* Adjust as needed */
-  /* Add animation properties */
-  animation: shakePhone 0.4s infinite;
-  width: 40px; /* 이미지 크기 조정 */
-  margin-right: 10px;
-  vertical-align: middle;
-  border: none;
-  background-color: white;
 }
 
 /* Adjust the margin to bring the text closer to the phone image */
@@ -356,12 +342,9 @@ header nav ul li a:hover {
   transition: background-color 0.3s ease;
   margin-left: 10px; /* Add margin to create space between elements */
   position: absolute;
-  left:65rem;
+  left: 65rem;
   top: -20rem;
-
 }
-
-
 
 /* Slogan Container */
 .slogan-container {
@@ -385,8 +368,8 @@ header nav ul li a:hover {
 .slogan-text {
   font-family: "Open Sans", sans-serif;
   font-size: 1.25rem;
-  color: #555;
-  line-height: 1.6;
+  color: #797979;
+  line-height: 1.7;
 }
 
 /* SKILL */
@@ -529,14 +512,13 @@ header nav ul li a:hover {
 .outer {
   border: 2px solid rgb(230, 230, 230);
   border-radius: 8px;
-  max-width: 1100px;
-  height: 1600px;
+  max-width: 1000px;
+  height: 1300px;
   margin: 0 auto;
   overflow-x: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: #fdfdfd; /* Change background color to black */
- 
 }
 
 .outer:hover {
@@ -544,6 +526,7 @@ header nav ul li a:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(129, 129, 129, 0.22);
 }
+
 .inner img {
   width: 80%;
   height: 90%;
@@ -563,8 +546,6 @@ header nav ul li a:hover {
 .inner ul p {
   margin-bottom: 30px;
 }
-
-
 
 .inner-wrap {
   background-color: rgb(255, 255, 255);
@@ -635,14 +616,37 @@ header nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-
-  .about .about__btn a {
-     
-    right:300rem;
-    top: 50rem;
-  
+  .skill h2.title {
+    margin-bottom: 64px;
   }
 
+  .inner .about__wrapper .about__img {
+    padding-bottom: 0px;
+  }
+
+  .inner h2 {
+    margin-bottom: 0px;
+  }
+
+  .about .about__wrapper {
+    flex-direction: column;
+  }
+
+  .about .about__text {
+    text-align: center;
+  }
+
+  .about__text .about__contact {
+  }
+
+  .about .about__contact img {
+    margin-left: 109px;
+  }
+
+  .contact__btn {
+    justify-content: flex-start;
+    margin-left: 20px;
+  }
 
   .button-list {
     display: flex;
@@ -650,27 +654,24 @@ header nav ul li a:hover {
     gap: 20px; /* 버튼 사이의 간격 조정 */
     margin: 0 auto;
   }
-  #about .inner{
+  #about .inner {
     padding-bottom: 100px;
   }
 
-
-  
-  .about__text ul li{
+  .about__text ul li {
     margin-bottom: 20px;
   }
-  .outer{
+  .outer {
     height: 1000px;
   }
-  .badge-container ul{
+  .badge-container ul {
     padding-top: 120px;
     padding-bottom: 8px;
+    margin-bottom: 20px;
   }
   /* .arrow-wrapper {
     margin-top: 800px; /* Increase margin for more downward movement */
-
-  } 
-
+}
 
 .course-container {
   text-align: center;
@@ -688,10 +689,19 @@ header nav ul li a:hover {
 .course-times {
   display: block;
   text-align: center;
+  padding-top: 10px 0px;
+}
+.course-duration {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #333;
+}
+.course-times {
+  margin-top: 10px;
 }
 
 .course-times {
-  color: #d5aaf1;
+  color: #ffd700;
   font-weight: 700;
 }
 
@@ -810,26 +820,26 @@ header nav ul li a:hover {
 /* Adjust the specific Instagram and Facebook icons */
 .contact .contact__sns ul li.instagram img {
   /* Replace 'instagram.png' with your actual Instagram logo image */
-  content: url('instagram.png');
+  content: url("instagram.png");
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /*이미지 경계 제거*/
 }
 
 .contact .contact__sns ul li.facebook img {
   /* Replace 'facebook.png' with your actual Facebook logo image */
-  content: url('facebook.png');
+  content: url("facebook.png");
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /*이미지 경계 제거*/
 }
 
 /* FOOTER */
-footer{
+footer {
   background-color: #333;
   color: white;
-  
 }
 
 footer .copyright {
   text-align: center;
   font-weight: 600;
   line-height: 200px;
-
 }
 
 /* MODAL */
