@@ -296,6 +296,7 @@ header nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-left: 200px;
 }
 
 .about .about__contact img {
@@ -309,7 +310,7 @@ header nav ul li a:hover {
 }
 
 .about .about__contact div {
-  margin-left: 55px;
+  margin-left: 8px;
 }
 
 /* 휴대폰 진동 keyframe */
@@ -326,6 +327,7 @@ header nav ul li a:hover {
 }
 
 .about .about__wrapper .about__text {
+  margin-bottom: 30px;
   width: 55%; /* 텍스트 영역 너비 조정 */
   padding: 30px;
   display: flex;
@@ -338,6 +340,9 @@ header nav ul li a:hover {
   font-size: 35px;
   color: #ffd700; /* 밝은 색상, 예: 금색 */
   margin-bottom: 20px; /* 간격 조정 */
+}
+.about .about__wrapper .about__text div ul li {
+  margin-bottom: 20px;
 }
 
 .about .about__wrapper .about__text h3 {
@@ -684,8 +689,8 @@ header nav ul li a:hover {
     text-align: center;
   }
 
-  .about .about__contact img {
-    margin-left: 109px;
+  .about .about__contact {
+    margin-left: 68px;
   }
 
   .contact__btn {
