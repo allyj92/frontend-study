@@ -13,60 +13,36 @@ spyEls.forEach(function (spyEl) {
 });
 
 // 모달창 띄우기
-let modalEl = document.querySelector("#modal");
-let modalBtn = document.querySelectorAll(".port .btn-modal");
-let closeBtn = document.querySelector("#modal .btn-close");
-console.log(modalBtn);
-console.log(modalBtn[0]);
-console.log(modalBtn[1]);
+document.addEventListener("DOMContentLoaded", function () {
+  // Get modal elements
+  const modal = document.getElementById("modal");
+  const btnClose = document.querySelector(".btn-close");
+  const btnModals = document.querySelectorAll(".btn-modal");
 
-// 첫번째 버튼
-modalBtn[0].addEventListener("click", function () {
-  // console.log('클릭됨');
-  modalEl.style.display = "flex";
-});
-closeBtn.addEventListener("click", function () {
-  modalEl.style.display = "none";
-});
-
-// 두번째 버튼
-
-modalBtn[1].addEventListener("click", function () {
-  // console.log('클릭됨');
-  modalEl.style.display = "flex";
-});
-closeBtn.addEventListener("click", function () {
-  modalEl.style.display = "none";
-});
-
-// 현재 연도 표시
-// 날짜 정보를 가진 JS의 Date 객체를 활용
-new Date().getFullYear(); // 현재 연도 정보가 숫자 데이터로 반환됨
-console.log(new Date().getFullYear());
-
-let thisYear = document.querySelector(".this-year");
-thisYear.textContent = new Date().getFullYear();
-
-// 페이지 최상단으로 이동
-let toTopBtn = document.querySelector("#to-top");
-
-// 페이지에 스크롤 이벤트 감지를 추가
-// Window: 브라우저 창 객체
-window.addEventListener("scroll", function () {
-  console.log(this.window.scrollY); // y축 스크롤 위치
-
-  // 페이지 스크롤 위치가
-  // 500px을 넘으면 요소를 보이고
-  // 500px을 넘지 않으면 요소 숨기기!
-  if (window.scrollY > 500) {
-    // 오소 보이기
-    // 애니메이션 처리를 하고 싶다면
-    toTopBtn.style.opacity = 1;
-    toTopBtn.style.transform = "translateX(0)";
-  } else {
-    toTopBtn.style.opacity = 0;
-    toTopBtn.style.transform = "translateX(100px)";
+  // Function to open the modal
+  function openModal() {
+    modal.style.display = "block";
   }
+
+  // Function to close the modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // Attach click event to open buttons
+  btnModals.forEach((btn) => {
+    btn.addEventListener("click", openModal);
+  });
+
+  // Attach click event to close button
+  btnClose.addEventListener("click", closeModal);
+
+  // Close modal if user clicks outside the modal content
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
 });
 
 // course
